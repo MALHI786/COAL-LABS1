@@ -1,0 +1,44 @@
+INCLUDE Irvine32.inc
+INCLUDELIB Irvine32.lib
+ 
+; these two lines are only necessary if you're not using Visual Studio
+INCLUDELIB kernel32.lib
+INCLUDELIB user32.lib
+ 
+.data
+    
+; var declarations go here
+ 
+m word 200
+n Dword 10000
+    o word 50 
+result DW ?
+ 
+ 
+.code
+main PROC
+
+; code goes here
+mov eax,0
+ 
+;for value is 
+mov ax,m 
+add ax,n
+ 
+ 
+sub ax,o 
+mov result,ax
+
+ 
+    ; for writing value on the console 
+
+call writedec 
+ 
+ 
+call DumpRegs ; displays registers in console
+ 
+exit
+ 
+main ENDP
+END main
+
